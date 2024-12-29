@@ -45,5 +45,28 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	
+	<!-- Add the following keys for local notifications -->
+
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>remote-notification</string>
+	</array>
+
+	<!-- Notification permissions -->
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Your message explaining why the app needs location access.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Your message explaining why the app needs location access.</string>
+	<key>UIUserNotificationSettings</key>
+	<dict>
+		<key>UIUserNotificationTypeAlert</key>
+		<true/>
+		<key>UIUserNotificationTypeBadge</key>
+		<true/>
+		<key>UIUserNotificationTypeSound</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

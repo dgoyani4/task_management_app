@@ -1,16 +1,29 @@
-# task_management_app
+# Task Management App
 
-A new Flutter project.
+A Flutter-based task management app that allows users to manage tasks, set reminders, and customize preferences like theme mode and task sorting order. The app uses local storage with SQLite for tasks and Hive for user preferences.
+
+## Features
+- **Task Management**: Create, update, and delete tasks.
+- **Reminders**: Set notifications for tasks that are due soon.
+- **Customizable Preferences**: Set the app's theme (light/dark) and choose a default sort order for tasks (by date or ID).
+- **Local Storage**: SQLite for task storage and Hive for preferences and notification data.
+- **Notifications**: Task reminders using `flutter_local_notifications`.
+
+## Prerequisites
+
+Ensure you have the following tools installed:
+
+- [Flutter SDK](https://flutter.dev/docs/get-started/install) (version 3.x or higher)
+- [Android Studio](https://developer.android.com/studio) or [Visual Studio Code](https://code.visualstudio.com/) for IDE support
+- A physical Android or iOS device or an emulator/simulator for testing
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+First, clone the repository to your local machine:
 
-A few resources to get you started if this is your first Flutter project:
+```bash
+git clone https://github.com/dgoyani4/task_management_app.git
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+cd task_management_app
+flutter pub get
+flutter run
