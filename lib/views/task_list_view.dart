@@ -8,6 +8,7 @@ class TaskListView extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final tasks = ref.watch(taskProvider);
+    final preferences = ref.watch(preferencesProvider);
     final searchQuery = ref.watch(searchQueryProvider);
 
     final filteredTasks = tasks.where((task) {
@@ -68,6 +69,21 @@ class TaskListView extends ConsumerWidget {
                         ),
                         title: Text(task.title),
                         subtitle: Text(task.description),
+                        trailing: Checkbox(
+                          value: task.isCompleted,
+                          onChanged: (value) {
+                            final updatedTask =
+                                task.copyWith(isCompleted: value!);
+                            ref
+                                .read(taskProvider.notifier)
+                                .updateTask(updatedTask);
+
+                            // Apply sort order after updating the task
+                            ref
+                                .read(taskProvider.notifier)
+                                .setSortOrder(preferences.defaultSortOrder);
+                          },
+                        ),
                         onTap: () => onTaskTap(task),
                       );
                     },
